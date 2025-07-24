@@ -20,10 +20,8 @@ class MatchViewModel: ObservableObject {
             }
             do {
                 let decoded = try JSONDecoder().decode(UserResponse.self, from: data)
-                DispatchQueue.main.async {
-                    self?.cacheUsers(decoded.results)
-                    self?.loadCachedUsers()
-                }
+                self?.cacheUsers(decoded.results)
+                self?.loadCachedUsers()
             } catch {
                 print("Decoding error: \(error)")
             }
@@ -67,12 +65,11 @@ class MatchViewModel: ObservableObject {
         let request: NSFetchRequest<CachedUser> = CachedUser.fetchRequest()
         do {
             let result = try context.fetch(request)
-            print("### Add data")
             DispatchQueue.main.async {
                 self.users = result
             }
         } catch {
-            print("### Failed to fetch users: \(error.localizedDescription)")
+            print("Failed to fetch users: \(error.localizedDescription)")
         }
     }
 }
