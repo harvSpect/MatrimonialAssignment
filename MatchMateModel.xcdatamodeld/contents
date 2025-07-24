@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="MatchMateModel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18122" systemVersion="21D62" minimumToolsVersion="Automatic" macOSVersion="Automatic">
+    <entity name="CachedUser" representedClassName="CachedUser" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUIDAttributeType"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="age" optional="YES" attributeType="Integer 16"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+    </entity>
+</model>

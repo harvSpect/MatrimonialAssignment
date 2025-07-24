@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct MatrimoniAssignmentApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject var viewModel = MatchViewModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MatchCardView(viewModel: viewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
